@@ -23,7 +23,8 @@ public class Sword : MonoBehaviour, IWeapon
 
     public void PerformSpecialAttack()
     {
-        animator.SetTrigger("Special_Attack");
+		// Sword has no special attack
+		// animator.SetTrigger("Special_Attack");
     }
 
     void OnTriggerEnter(Collider col)

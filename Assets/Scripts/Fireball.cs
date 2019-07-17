@@ -24,13 +24,13 @@ public class Fireball : MonoBehaviour {
         }
     }
 
-    void OnCollisionEnter(Collision col)
+	void OnTriggerEnter (Collider col)
     {
-        if (col.transform.tag == "Enemy")
+        if (col.tag == "Enemy")
         {
-            col.transform.GetComponent<IEnemy>().TakeDamage(Damage);
+            col.GetComponent<IEnemy>().TakeDamage(Damage);
+			Extinguish();
         }
-        Extinguish();
     }
 
     void Extinguish()
