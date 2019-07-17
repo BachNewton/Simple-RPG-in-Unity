@@ -4,20 +4,24 @@ using UnityEngine.UI;
 
 public class InventoryController : MonoBehaviour {
     public static InventoryController Instance { get; set; }
-    public PlayerWeaponController playerWeaponController;
+	[HideInInspector]
+	public PlayerWeaponController playerWeaponController;
+	[HideInInspector]
     public ConsumableController consumableController;
     public InventoryUIDetails inventoryDetailsPanel;
     public List<Item> playerItems = new List<Item>();
 
     void Start()
     {
-        if (Instance != null && Instance != this)
+		Debug.Log (gameObject.name);
+		if (Instance != null && Instance != this)
             Destroy(gameObject);
         else
             Instance = this;
 
         playerWeaponController = GetComponent<PlayerWeaponController>();
         consumableController = GetComponent<ConsumableController>();
+
         GiveItem("sword");
         GiveItem("staff");
         GiveItem("potion_log");
