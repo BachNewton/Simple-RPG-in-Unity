@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Interactable : MonoBehaviour {
+public class Interactable : MonoBehaviour
+{
     [HideInInspector]
     public UnityEngine.AI.NavMeshAgent playerAgent;
     private bool hasInteracted;
@@ -26,7 +27,10 @@ public class Interactable : MonoBehaviour {
             if (playerAgent.remainingDistance <= playerAgent.stoppingDistance)
             {
                 if (!isEnemy)
+                {
                     Interact();
+                }
+
                 hasInteracted = true;
             }
         }

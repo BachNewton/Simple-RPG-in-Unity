@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class InventoryController : MonoBehaviour {
+public class InventoryController : MonoBehaviour
+{
     public static InventoryController Instance { get; set; }
-	[HideInInspector]
-	public PlayerWeaponController playerWeaponController;
-	[HideInInspector]
+    [HideInInspector]
+    public PlayerWeaponController playerWeaponController;
+    [HideInInspector]
     public ConsumableController consumableController;
     public InventoryUIDetails inventoryDetailsPanel;
     public List<Item> playerItems = new List<Item>();
 
     void Start()
     {
-		Debug.Log (gameObject.name);
-		if (Instance != null && Instance != this)
+        if (Instance != null && Instance != this)
             Destroy(gameObject);
         else
             Instance = this;
